@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# C317-GetJobs-Frond-End
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" /> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> <img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" />
 
-## Available Scripts
+<img src="GetJobs.png">
 
-In the project directory, you can run:
+> Repositório para armazenar os códigos do Back-End do projeto GetJobs.
 
-### `npm start`
+## 💻 Pré-requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para entender o que está sendo feito nos códigos é necessário atender aos seguintes requisitos:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Ter instalado o `<Visual Studio Code>`;
+* Pode ser utilizado qualquer Sistema Operacional `<Windows / Linux / Mac>`;
+* Ter conhecimento básico sobre: `<JavaScript / NodeJS`;
 
-### `npm test`
+## 💻 Executando
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para executar o projeto corretamente, utilize os seguintes comandos:
+ ```
+ npm install
+ ```
+ ```
+ npm start
+ ```
 
-### `npm run build`
+## 🤝 Colaboradores
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" width="100px;" alt="Foto do Daniel Coelho no GitHub"/><br>
+        <sub>
+          <b>Daniel Coelho</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" width="100px;" alt="Foto do Diogo Antonio no GitHub"/><br>
+        <sub>
+          <b>Diogo Antonio</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/49520647?v=4" width="100px;" alt="Foto do Erich Pfaffenbach no GitHub"/><br>
+        <sub>
+          <b>Erich Pfaffenbach</b>
+        </sub>
+      </a>
+    </td>
+   <td align="center">
+      <a href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" width="100px;" alt="Foto do Lucas Piva no GitHub"/><br>
+        <sub>
+          <b>Lucas Piva</b>
+        </sub>
+      </a>
+    </td>
+   <tr>
+</table>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contato
+Contato | Endereço
+------------ | -------------
+<img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" /> | danielcoelho@gec.inatel.br
+<img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" /> | diogoantonio@ges.inatel.br
+<img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" /> | erich.silveira@ges.inatel.br
+<img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" /> | lucas.piva@gec.inatel.br
