@@ -12,7 +12,7 @@ Para entender o que está sendo feito nos códigos é necessário atender aos se
 
 * Ter instalado o `<Visual Studio Code>`;
 * Pode ser utilizado qualquer Sistema Operacional `<Windows / Linux / Mac>`;
-* Ter conhecimento básico sobre: `<JavaScript / NodeJS`;
+* Ter conhecimento básico sobre: `<HTML / CSS / JavaScript / ReactJS`;
 
 ## 💻 Executando
 
