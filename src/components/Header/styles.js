@@ -15,4 +15,8 @@ export const Container = styled.nav`
     gap: 64px;
     color: #ddd7dd;
   }
+
+  img {
+    background-color : #fff
+  }
 `;

@@ -12,7 +12,7 @@ export const Header = () => {
         <a href="/sobre">Sobre</a>|<a href="/contato">Contato</a>
       </div>
       <div>
-        <a href="">Login</a>
+        <a href="/login">Login</a>
       </div>
     </Container>
   );
