@@ -27,8 +27,8 @@ export const Login = () => {
   return (
     <Container>
       <Header />
-      <Card className='card-login'>
-        <div className='box-login'>
+      <Card className="card-login">
+        <div className="box-login">
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email"></label>
@@ -37,7 +37,7 @@ export const Login = () => {
                 id="email"
                 value={email}
                 onChange={handleUsernameChange}
-                placeholder='e-mail'
+                placeholder="e-mail"
               />
             </div>
             <div>
@@ -47,15 +47,17 @@ export const Login = () => {
                 id="password"
                 value={password}
                 onChange={handlePasswordChange}
-                placeholder='Senha'
+                placeholder="Senha"
               />
             </div>
             <div>
               <button type="submit">Entrar</button>
             </div>
-            <div className='cadastro'>
-              <p> Ainda não tem cadastro?
-                <a href='/cadastro'>Clique aqui!</a>
+            <div className="cadastro">
+              <p>
+                {' '}
+                Ainda não tem cadastro?
+                <a href="/cadastro">Clique aqui!</a>
               </p>
             </div>
           </form>
@@ -64,5 +66,3 @@ export const Login = () => {
     </Container>
   );
 };
-
-
