@@ -11,7 +11,9 @@ export const Home = () => {
       <Header />
       <Card>
         <div>
-          <h1>Como podemos lhe servir?</h1>
+          <h1>
+            <a href='/servicos'>Como podemos lhe servir?</a>
+          </h1>
         </div>
 
         <div>
