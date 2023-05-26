@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
+import jwtDecode from 'jwt-decode';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import { useQuery } from 'react-query';
 
@@ -10,9 +11,9 @@ import { EditModal } from '../../components/EditModal';
 import { Header } from '../../components/Header';
 import { Loader } from '../../components/Loader';
 import { api } from '../../services/api';
-
 export const Servicos = () => {
   const [isOpenEdit, setIsOpenEdit] = useState(false);
+  const [decoded, setDecoded] = useState({});
   const [isOpenAdd, setIsOpenAdd] = useState(false);
   const [userSelectedId, setUserSelectedId] = useState({});
   const { data, isLoading, isError } = useQuery('data', async () => {
@@ -22,6 +23,18 @@ export const Servicos = () => {
     }
     return response.json();
   });
+
+  useEffect(() => {
+    async function getUser() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        const decoded = jwtDecode(token);
+        setDecoded(decoded);
+      }
+    }
+
+    getUser();
+  }, []);
 
   if (isLoading) {
     return (
@@ -64,7 +77,6 @@ export const Servicos = () => {
           <div className="adicionarSem">
             <div></div>
             <h1 className="semPessoas">Sem Pessoas Cadastradas</h1>
-
             <button
               className="botaoAdicionar"
               onClick={() => setIsOpenAdd(true)}
@@ -132,7 +144,7 @@ export const Servicos = () => {
         {isOpenEdit && (
           <EditModal id={userSelectedId} setIsOpen={setIsOpenEdit} />
         )}
-        {isOpenAdd && <AddModal setIsOpen={setIsOpenAdd} />}
+        {isOpenAdd && <AddModal setIsOpen={setIsOpenAdd} user={decoded} />}
       </Card>
     </Container>
   );

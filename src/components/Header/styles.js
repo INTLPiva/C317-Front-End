@@ -9,6 +9,7 @@ export const Container = styled.nav`
   a {
     color: #ddd7dd;
     position: relative;
+    cursor: pointer;
   }
 
   .links {

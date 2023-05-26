@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 import { Container } from './styles';
 import { Card } from '../../components/Card';
 import { Header } from '../../components/Header';
+import { Context } from '../../Context/AuthContext';
+import { api } from '../../services/api';
 
 export const Cadastro = () => {
+  // eslint-disable-next-line prefer-const
+  let navigate = useNavigate();
+
   const [nome, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [localizacao, setLocal] = useState('');
-  const [telefone, setTelefone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmacaoPassword, setConfirmacaoPassword] = useState('');
-  const [selecao, setSelecao] = useState('');
+
+  const { setarLoading, handleLogin, loading } = useContext(Context);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -20,41 +26,61 @@ export const Cadastro = () => {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-  const handleLocalizacaoChange = (event) => {
-    setLocal(event.target.value);
-  };
-  const handleTelefoneChange = (event) => {
-    setTelefone(event.target.value);
-  };
+
   const handleConfirmacaoPasswordChange = (event) => {
     setConfirmacaoPassword(event.target.value);
   };
-  
+
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  
-  const handleSelecaoChange = (event) => {
-    setSelecao(event.target.value);
-  };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Aqui você pode adicionar a lógica para autenticar o usuário com o backend
+    if (!nome || !email || !password || !confirmacaoPassword) {
+      return alert('Preencha todos os campos');
+    }
 
-    console.log('Nome:', nome);
-    console.log('e-mail:', email);
-    console.log('Localização:', localizacao);
-    console.log('Telefone:', telefone);
-    console.log('Senha:', password);
-    console.log('Seleção:', selecao);
+    if (password !== confirmacaoPassword) {
+      return alert('As 2 senhas devem ser iguais');
+    }
+
+    try {
+      const usuario = await api.post('/user/create', {
+        nome,
+        email,
+        senha: password,
+      });
+
+      console.log(usuario);
+    } catch (error) {
+      if (error.response.status === 409) {
+        return alert('Usuário já existente');
+      }
+    }
+
+    logar();
   };
+
+  async function logar() {
+    setarLoading(true);
+
+    try {
+      await handleLogin({ email, senha: password });
+      setarLoading(false);
+    } catch {}
+
+    if (!loading) {
+      return navigate('/servicos');
+    }
+  }
 
   return (
     <Container>
       <Header />
-      <Card className='card-login'>
-        <div className='box-login'>
+      <Card className="card-login">
+        <div className="box-login">
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="Nome"></label>
@@ -63,8 +89,7 @@ export const Cadastro = () => {
                 id="nome"
                 value={nome}
                 onChange={handleNameChange}
-                placeholder='Nome'
-
+                placeholder="Nome"
               />
             </div>
             <div>
@@ -74,32 +99,9 @@ export const Cadastro = () => {
                 id="email"
                 value={email}
                 onChange={handleEmailChange}
-                placeholder='e-mail'
-
+                placeholder="E-mail"
               />
             </div>
-            <div>
-              <label htmlFor="localizacao"></label>
-              <input
-                type="text"
-                id="localizacao"
-                value={localizacao}
-                onChange={handleLocalizacaoChange}
-                placeholder='Localização'
-
-              />
-            </div>
-            <div>
-              <label htmlFor="Telefone"></label>
-              <input
-                type="text"
-                id="telefone"
-                value={telefone}
-                onChange={handleTelefoneChange}
-                placeholder='Telefone'
-              />
-            </div>
-
             <div>
               <label htmlFor="password"></label>
               <input
@@ -107,7 +109,7 @@ export const Cadastro = () => {
                 id="password"
                 value={password}
                 onChange={handlePasswordChange}
-                placeholder='Senhas'
+                placeholder="Senha"
               />
             </div>
             <div>
@@ -117,18 +119,7 @@ export const Cadastro = () => {
                 id="confirmacaoPassword"
                 value={confirmacaoPassword}
                 onChange={handleConfirmacaoPasswordChange}
-                placeholder='Confirmar Senha'
-                
-              />
-            </div>
-            <div>
-              <label htmlFor="selecao"></label>
-              <input
-                type="text"
-                id="selecao"
-                value={selecao}
-                onChange={handleSelecaoChange}
-                placeholder='Selecione'
+                placeholder="Confirmar Senha"
               />
             </div>
             <div>
@@ -140,5 +131,3 @@ export const Cadastro = () => {
     </Container>
   );
 };
-
-

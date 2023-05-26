@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
 import { RiCloseLine } from 'react-icons/ri';
@@ -7,20 +7,28 @@ import { Container } from './styles';
 import { api } from '../../services/api';
 import { Input } from '../Input';
 
-export function AddModal({ setIsOpen }) {
+export function AddModal({ setIsOpen, user }) {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [servico, setServico] = useState('');
   const [celular, setCelular] = useState('');
   const [cidade, setCidade] = useState('');
 
-  function handleChangeNome(event) {
-    setNome(event.target.value);
-  }
+  // function handleChangeNome(event) {
+  //   setNome(event.target.value);
+  // }
 
-  function handleChangeEmail(event) {
-    setEmail(event.target.value);
-  }
+  // function handleChangeEmail(event) {
+  //   setEmail(event.target.value);
+  // }
+  useEffect(() => {
+    function setUser() {
+      setNome(user.name);
+      setEmail(user.email);
+    }
+
+    setUser();
+  }, []);
 
   function handleChangeServico(event) {
     setServico(event.target.value);
@@ -39,7 +47,6 @@ export function AddModal({ setIsOpen }) {
       id: '1',
       nome,
       email,
-      senha: '1',
       servico,
       celular,
       cidade,
@@ -62,18 +69,8 @@ export function AddModal({ setIsOpen }) {
             <RiCloseLine />
           </button>
           <div className="modalContent">
-            <Input
-              name="Nome"
-              type="text"
-              value={nome}
-              onChange={handleChangeNome}
-            />
-            <Input
-              name="E-Mail"
-              type="text"
-              value={email}
-              onChange={handleChangeEmail}
-            />
+            <Input name="Nome" type="text" value={nome} readonly />
+            <Input name="E-Mail" type="text" value={email} readonly />
             <Input
               name="Serviço"
               type="text"
@@ -104,4 +101,5 @@ export function AddModal({ setIsOpen }) {
 
 AddModal.propTypes = {
   setIsOpen: PropTypes.func,
+  user: PropTypes.object,
 };
