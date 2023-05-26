@@ -23,6 +23,23 @@ Para executar o projeto corretamente, utilize os seguintes comandos:
  ```
  npm start
  ```
+ ## 💻 Executando os testes
+
+Para executar os testes, utilize os seguintes comandos:
+ ```
+ cd ./testes
+ ```
+ ```
+ npm init
+ ```
+ ```
+ npm install
+ ```
+ ```
+ ./node_modules/.bin/cypress run --spec 'cypress/e2e/**/'
+ ```
+ 
+ 
 
 ## 🤝 Colaboradores
 
@@ -30,7 +47,7 @@ Para executar o projeto corretamente, utilize os seguintes comandos:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://cdn-icons-png.flaticon.com/512/17/17004.png" width="100px;" alt="Foto do Daniel Coelho no GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/u/79683513?s=400&u=76c3465e2e5482dc7ab7c5f13e0fcd6d7f5ec6c7&v=4" width="100px;" alt="Foto do Daniel Coelho no GitHub"/><br>
         <sub>
           <b>Daniel Coelho</b>
         </sub>
