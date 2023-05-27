@@ -9,8 +9,7 @@ import { Header } from '../../components/Header';
 import { Context } from '../../Context/AuthContext';
 
 export const Login = () => {
-  // eslint-disable-next-line prefer-const
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import jwtDecode from 'jwt-decode';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
@@ -10,12 +10,15 @@ import { Card } from '../../components/Card';
 import { EditModal } from '../../components/EditModal';
 import { Header } from '../../components/Header';
 import { Loader } from '../../components/Loader';
+import { Context } from '../../Context/AuthContext';
 import { api } from '../../services/api';
+
 export const Servicos = () => {
   const [isOpenEdit, setIsOpenEdit] = useState(false);
   const [decoded, setDecoded] = useState({});
   const [isOpenAdd, setIsOpenAdd] = useState(false);
   const [userSelectedId, setUserSelectedId] = useState({});
+  const { authenticated } = useContext(Context);
   const { data, isLoading, isError } = useQuery('data', async () => {
     const response = await fetch('http://localhost:4000/func/list');
     if (!response.ok) {
@@ -80,6 +83,7 @@ export const Servicos = () => {
             <button
               className="botaoAdicionar"
               onClick={() => setIsOpenAdd(true)}
+              disabled={!authenticated}
             >
               Adicionar
             </button>
@@ -90,6 +94,7 @@ export const Servicos = () => {
               <button
                 className="botaoAdicionar"
                 onClick={() => setIsOpenAdd(true)}
+                disabled={!authenticated}
               >
                 Adicionar
               </button>

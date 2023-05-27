@@ -35,6 +35,21 @@ export const Container = styled.div`
     margin-top: 16px;
   }
 
+  .botaoAdicionar:disabled {
+    background: green;
+    border: none;
+    border-radius: 24px;
+    width: 100px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    align-self: center;
+    margin-right: 16px;
+    margin-top: 16px;
+    cursor: not-allowed;
+  }
+
   div {
     div {
       background-color: #ddd7dd;
