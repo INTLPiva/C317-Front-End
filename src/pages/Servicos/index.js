@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 import jwtDecode from 'jwt-decode';
-import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
+import { FaPencilAlt, FaTrashAlt, FaBan } from 'react-icons/fa';
 import { useQuery } from 'react-query';
 
 import { Container, Table, ContainerLoading } from './styles';
@@ -127,17 +127,31 @@ export const Servicos = () => {
                           </p>
                         </td>
                         <td>{element.servico}</td>
-                        <td>
-                          <FaPencilAlt
-                            onClick={() => {
-                              setIsOpenEdit(true);
-                              setUserSelectedId(element.id);
-                            }}
-                          />
-                        </td>
-                        <td>
-                          <FaTrashAlt onClick={() => deletar(element.email)} />
-                        </td>
+                        {authenticated ? (
+                          <td>
+                            <FaPencilAlt
+                              onClick={() => {
+                                setIsOpenEdit(true);
+                                setUserSelectedId(element.id);
+                              }}
+                            />
+                          </td>
+                        ) : (
+                          <td>
+                            <FaBan />
+                          </td>
+                        )}
+                        {authenticated ? (
+                          <td>
+                            <FaTrashAlt
+                              onClick={() => deletar(element.email)}
+                            />
+                          </td>
+                        ) : (
+                          <td>
+                            <FaBan />
+                          </td>
+                        )}
                       </tr>
                     );
                   })}
