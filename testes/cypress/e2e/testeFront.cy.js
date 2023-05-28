@@ -43,7 +43,7 @@ describe('Criando cenario de teste para o frontend da aplicação GetJobs - Proj
     cy.get('.links > [href="/servicos"]').click();
     cy.get(':nth-child(3) > a').should('contain.text', 'Login');
     //cy.get('.botaoAdicionar').should('be.disabled');
-    cy.get('.botaoAdicionar').should('be.enabled'); //apagar e deixar a linha de cima apenas
+    cy.get('.botaoAdicionar').should('be.disabled'); //apagar e deixar a linha de cima apenas
   });
 
   it('Caso de teste 07: Clicando em Serviços após realizar login', () => {
